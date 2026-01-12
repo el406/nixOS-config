@@ -9,5 +9,8 @@
 	
 	#wm stuff
 	xdg-desktop-portal-hyprland
+	
+	#misc packages
+	spotify
   ];
 }
