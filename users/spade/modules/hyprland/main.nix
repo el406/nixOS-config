@@ -12,7 +12,8 @@ in
 	
 	settings = {
 		"$mod" = "SUPER";
-		inherit (binds) bind;
+		inherit (binds) bind bindel;
+	
 	};
 	};	
 }

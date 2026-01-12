@@ -54,21 +54,13 @@
       "$mod SHIFT, 0, movetoworkspacesilent, 10"
 
       ];
+
        # Laptop multimedia keys for volume and LCD brightness
     bindel = [
       ",XF86AudioRaiseVolume,  exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
       ",XF86AudioLowerVolume,  exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
       ",XF86AudioMute,         exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
       ",XF86AudioMicMute,      exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
-      "$mod,, bracketright, exec, brightnessctl s 10%+"
-      "$mod,, bracketleft,  exec, brightnessctl s 10%-"
     ];
 
-    # Audio playback
-    bindl = [
-      ", XF86AudioNext,  exec, playerctl next"
-      ", XF86AudioPause, exec, playerctl play-pause"
-      ", XF86AudioPlay,  exec, playerctl play-pause"
-      ", XF86AudioPrev,  exec, playerctl previous"
-    ];
 }
