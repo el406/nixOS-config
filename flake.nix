@@ -1,72 +1,80 @@
 {
-  description = "Config i stole from amper youtube video";
+  description = "Config i stole from amper youtube video ehehe";
 
   inputs = {
-
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
-	
-
-    # neovim overlay
-    neovim-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay";
-      inputs = { nixpkgs.follows = "nixpkgs"; };
-    };
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nixvim = {
+      url = "github:nix-community/nixvim/nixos-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager,neovim-overlay, ... }@inputs: let
+  outputs = { self, nixpkgs, home-manager, nixvim, ... }@inputs:
+  let
     system = "x86_64-linux";
-    homeStateVersion = "25.05";
+    homeStateVersion = "25.11";
     user = "spade";
+
     hosts = [
-      { hostname = "spade"; stateVersion = "25.05"; }
+      { hostname = "spade"; stateVersion = "25.11"; }
     ];
 
-    overlays = [
-    	neovim-overlay.overlays.default
-	];
+    makeSystem = { hostname, stateVersion }:
+      nixpkgs.lib.nixosSystem {
+        inherit system;
 
-    makeSystem = { hostname, stateVersion }: nixpkgs.lib.nixosSystem {
-      system = system;
-      specialArgs = {
-        inherit inputs stateVersion hostname user;
-      };
-
-      modules = [
-       	({config, ...}: {
-	nixpkgs.overlays = overlays;
-	})
-
-	./hosts/${hostname}/configuration.nix
-      ];
-    };
-
-  in {
-    nixosConfigurations = nixpkgs.lib.foldl' (configs: host:
-      configs // {
-        "${host.hostname}" = makeSystem {
-          inherit (host) hostname stateVersion;
+        specialArgs = {
+          inherit inputs stateVersion hostname user;
         };
-      }) {} hosts;
-
-    homeConfigurations.${user} = home-manager.lib.homeManagerConfiguration {
-      pkgs = import nixpkgs {
-      inherit system;
-      overlays = overlays;
-    };
 
 
-      extraSpecialArgs = {
-        inherit inputs homeStateVersion user;
+        modules = [
+          
+	  ({ config, pkgs, ... }: {
+      	  nixpkgs.config.allowUnfree = true;
+    	  }) 
+
+	  ./hosts/${hostname}/configuration.nix
+	  home-manager.nixosModules.home-manager {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+
+          home-manager.sharedModules = [
+            nixvim.homeModules.nixvim
+          ];
+	  }
+        ];
       };
+  in
+  {
+    nixosConfigurations =
+      nixpkgs.lib.foldl' (configs: host:
+        configs // {
+          ${host.hostname} = makeSystem host;
+        }
+      ) {} hosts;
 
-      modules = [
-        ./users/spade/home.nix
-      ];
-    };
+    homeConfigurations.${user} =
+      home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs {
+          inherit system;
+        };
+
+        extraSpecialArgs = {
+          inherit inputs homeStateVersion user;
+        };
+
+        modules = [
+          nixvim.homeModules.nixvim
+          ./users/spade/home.nix
+        ];
+      };
   };
 }
+
