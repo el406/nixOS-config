@@ -1,34 +1,35 @@
 * {
- font-family: "JetBrains Mono";
+ font-family: "Jetbrains Mono";
   font-weight: bold;
   font-size: 11px;
   min-height: 0;
-  color: #FFCC00;
-  background-color: #090040;
+  background-color:#2b163b;
+  color: #bea1f7;
 }
 
-#mainbar {
-  border-bottom-right-radius: 15px;
-  border-bottom-left-radius: 15px;
-}
-
-
-#custom-centerLogo {
-  background-image: url("nixIcon.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-
-  min-width: 120px;
-  min-height: 28px;
-
-  margin: 0 10px;
-}
 
 #clock, #battery, #pulseaudio, #tray, #network, #bluetooth {
-  padding: 5px 5px;
-  margin: 1px 5px;
-  background-color:#471396; 
-  border-radius: 25px; 
+  padding: 7px 5px;
+  margin: 5px 5px;
+  background-color:#3a393b; 
+  border-radius: 5px; 
 }
+
+#battery {
+  color: #7be3a1;
+}
+
+#battery.charging{
+  color :#90cafc;
+}
+
+#battery.critical{
+  color:#e63219;
+}
+
+#battery.warning{
+  color:#fcf090;
+
+}
+
 

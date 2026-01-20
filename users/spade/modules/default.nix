@@ -8,5 +8,6 @@
 	./waybar
 	./nvim.nix
 	./wofi
+	./swaync
 	];
 }

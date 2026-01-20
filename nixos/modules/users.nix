@@ -1,7 +1,7 @@
 {pkgs, user, ...} : {
  users.users.spade = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "networkManager" ]; # Enable ‘sudo’ for the user.
+      extraGroups = [ "wheel" "networkmanager" ];
       packages = with pkgs; [
       tree
      ];

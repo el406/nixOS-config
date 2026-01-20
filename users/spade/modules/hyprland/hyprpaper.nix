@@ -1,14 +1,19 @@
-{ pkgs, ... }: {
+{ config, pkgs, ... }:
+
+{
   services.hyprpaper = {
     enable = true;
+
     settings = {
-      ipc = "on";
+      ipc = true;
       splash = false;
+
       preload = [
-        "background.jpg"
+        "${config.home.homeDirectory}/nix/users/spade/modules/hyprland/background.png"
       ];
+
       wallpaper = [
-        "background.jpg"
+        ",${config.home.homeDirectory}/nix/users/spade/modules/hyprland/background.png"
       ];
     };
   };

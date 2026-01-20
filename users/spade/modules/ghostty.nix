@@ -4,7 +4,7 @@
   programs.ghostty = {
     enable = true;
     settings = {
-      theme = "Retro";
+      theme = "Urple";
       font-family = "Berkeley Mono";
       font-size = 14;
       window-padding-x = 10;
