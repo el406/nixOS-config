@@ -6,7 +6,7 @@
 	./git.nix
 	./hyprland
 	./waybar
-	./nvim.nix
+	./nvim
 	./wofi
 	];
 }
