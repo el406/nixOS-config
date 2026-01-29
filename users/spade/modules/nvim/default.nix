@@ -9,7 +9,6 @@
 	./modules
     ];
     
-    # bindings
   };
 }
 
