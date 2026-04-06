@@ -2,7 +2,7 @@
   globals.mapleader = " ";
   keymaps = [
     {
-      key = "<leader>ft";
+      key = "<leader>f";
       mode = "n";
       action = ":NvimTreeToggle<CR>";
       options = {
@@ -25,6 +25,23 @@
       	silent = true;
       };
     }
- 
-  ];
+    {
+      key = "<leader>ee";
+      mode = "n";
+      action = ":lua vim.diagnostic.open_float()<CR>";
+      options = {
+      	silent = true;
+      };
+    }
+
+    {
+      key = "<C-p>";
+      mode = "n";
+      action = ":lua require('conform').format()";
+      options = {
+      	silent = true;
+      };
+    }
+
+ ];
 }

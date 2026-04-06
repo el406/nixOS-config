@@ -25,6 +25,9 @@
 	    #uiua
 	    uiua.enable = true;
 
+	    #java lang server for frc
+	    jdtls.enable = true; 
+
 	    };
 
   	};

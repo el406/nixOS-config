@@ -9,8 +9,13 @@
 	
 	#wm stuff
 	xdg-desktop-portal-hyprland
-	
+	networkmanagerapplet
 	#misc packages
 	spotify
+	xournalpp
+	kicad
+	freecad
+	#latex
+	texlive.combined.scheme-full
   ];
 }
