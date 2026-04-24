@@ -1,10 +1,15 @@
 {
-	services.xserver = {
+	services ={
+	xserver = {
 		enable = true;
-		displayManager.gdm = {
-		enable = true;
-		wayland = true;
-		};
-		libinput.enable = true;
 	};
+	displayManager.gdm = {
+	enable = true;
+	};
+
+	libinput.enable = true;
+
+	};
+	programs.xwayland.enable = true;
+
 }

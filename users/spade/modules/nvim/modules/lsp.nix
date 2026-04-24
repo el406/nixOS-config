@@ -8,7 +8,7 @@
 	    servers = {
 
 	    #lua lang server
-	    lua-ls.enable = true;
+	    lua_ls.enable = true;
 
 	    #nix lang server
 	    nixd.enable = true;
@@ -31,9 +31,6 @@
 	    };
 
   	};
-	lspconfig = {
-	    enable = true;
-	};
 	blink-cmp = {
 	    enable = true;
 	};

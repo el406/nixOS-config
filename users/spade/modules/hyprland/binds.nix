@@ -18,10 +18,10 @@
       "$mod, j, movefocus, d"
 
       # Moving windows
-      "$mod SHIFT, h,  swapwindow, l"
+      "$mod SHIFT, h, swapwindow, l"
       "$mod SHIFT, l, swapwindow, r"
-      "$mod SHIFT, k,    swapwindow, u"
-      "$mod SHIFT, j,  swapwindow, d"
+      "$mod SHIFT, k, swapwindow, u"
+      "$mod SHIFT, j, swapwindow, d"
 
       # Resizeing windows                   X  Y
       "$mod CTRL, h,  resizeactive, -60 0"

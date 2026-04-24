@@ -11,6 +11,7 @@
       window-padding-y = 10;
     };
     # define custom keybindings here
+
   };
 }
 

@@ -1,7 +1,7 @@
 {pkgs, ...}:
 {
 
-plugins.tiny-devicons-auto-colors = {
+plugins.web-devicons = {
   enable = true;
 };
 
