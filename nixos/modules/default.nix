@@ -13,5 +13,8 @@
 	./users.nix
 	./waybar.nix
 	./wayland.nix	
+	./graphics.nix
+	./nixld.nix
 	];
+
 }

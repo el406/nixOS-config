@@ -6,7 +6,10 @@
   background-color:#2b163b;
   color: #bea1f7;
 }
-
+#workspaces button.active {
+    background-color: #2b163b; 
+    color: #ffffff;
+}
 
 #clock, #battery, #pulseaudio, #tray, #network, #bluetooth {
   padding: 7px 5px;

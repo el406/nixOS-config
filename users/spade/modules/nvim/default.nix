@@ -3,7 +3,10 @@
 
   programs.nixvim = {
     enable = true;
-    colorschemes.catppuccin.enable = true;
+    colorschemes.palette = {
+    enable = true;
+    };
+    
 
     imports = [
 	./modules

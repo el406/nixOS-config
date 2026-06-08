@@ -2,7 +2,7 @@
 	imports = [
 	./firefox.nix
 	./font.nix
-	./ghostty.nix
+	./ghostty
 	./git.nix
 	./hyprland
 	./waybar
