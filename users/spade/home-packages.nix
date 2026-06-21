@@ -1,10 +1,10 @@
 { pkgs, ... }: {
+
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
 	# base installs
 	wget
-	neofetch
 	vim
 	
 	#wm stuff
@@ -15,6 +15,9 @@
 	xournalpp
 	kicad
 	freecad
+	discord-canary
+
+
 	#latex
 	texlive.combined.scheme-full
   ];

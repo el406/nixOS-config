@@ -12,5 +12,9 @@
   networking.hostName = hostname;
 
   system.stateVersion = stateVersion;
+
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
 }
 

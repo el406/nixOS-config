@@ -1,7 +1,10 @@
 {
 	services.libinput = 
 	{
-	enable = false;
+	  enable = false;
+	  touchpad.additionalOptions = ''
+    Option "Ignore" "on"
+  '';
 
 	};
 }
