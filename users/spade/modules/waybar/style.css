@@ -3,19 +3,44 @@
   font-weight: bold;
   font-size: 11px;
   min-height: 0;
-  background-color:#2b163b;
-  color: #bea1f7;
-}
-#workspaces button.active {
-    background-color: #2b163b; 
-    color: #ffffff;
+  color: #7700ff;
+  background-color: transparent;
+  text-shadow: 
+    0 0 5px #fff,         
+    0 0 10px #b026ff,    
+    0 0 20px #b026ff
 }
 
-#clock, #battery, #pulseaudio, #tray, #network, #bluetooth {
+#workspaces {
+    background-image: url("/home/spade/nix/users/spade/modules/waybar/assets/leftpanel.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    min-width: 400px;
+    min-height: 40px;
+}
+
+
+
+
+#workspaces button.active {
+    border-bottom: 1px solid #c905ff;
+    border-radius: 1px;
+    
+}
+
+
+#clock, #battery, #pulseaudio, #tray, #bluetooth {
   padding: 7px 5px;
   margin: 5px 5px;
   border-radius: 5px; 
 }
+
+#tray menu {
+	background-color:black;
+}
+
+
+
 
 #battery {
   color: #7be3a1;

@@ -10,7 +10,7 @@ in
     enableBashIntegration = true;
     installVimSyntax = true;
     settings = {
-      theme = "Retro Legends";
+      #theme = "Retro Legends";
       font-family = "Berkeley Mono";
       font-size = 14;
       window-padding-x = 10;

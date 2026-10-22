@@ -1,12 +1,14 @@
 {
+
     bind = [
+
+
       "$mod SHIFT, enter, exec, $terminal"
       "$mod SHIFT, C, killactive,"
       "$mod SHIFT, Q, exit,"
       "$mod,       F, togglefloating,"
       "$mod,       D, exec, wofi --show drun"
       "$mod,       P, pin,"
-      "$mod,       J, togglesplit,"
       "$mod,       E, exec, bemoji -cn"
       "$mod SHIFT, B, exec, pkill -SIGUSR1 waybar"
       ", Print, exec, grimblast --notify --freeze copysave area"

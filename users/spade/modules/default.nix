@@ -1,6 +1,6 @@
 {
 	imports = [
-	./firefox.nix
+	./browser.nix
 	./font.nix
 	./ghostty
 	./git.nix
@@ -8,5 +8,6 @@
 	./waybar
 	./nvim
 	./wofi
+	./stylix.nix
 	];
 }

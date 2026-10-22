@@ -11,11 +11,16 @@
 
     nixvim = {
       url = "github:nix-community/nixvim/nixos-26.05";
+    };
+
+    stylix  = {
+      url = "github:nix-community/stylix/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
   };
 
-  outputs = { self, nixpkgs, home-manager, nixvim, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nixvim, stylix, ... }@inputs:
   let
     system = "x86_64-linux";
     homeStateVersion = "26.05";
@@ -33,22 +38,23 @@
           inherit inputs stateVersion hostname user;
         };
 
-
+	
         modules = [
           
-	  ({ config, pkgs, ... }: {
-      	  nixpkgs.config.allowUnfree = true;
-    	  }) 
 
 	  ./hosts/${hostname}/configuration.nix
+
 	  home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
 
+
           home-manager.sharedModules = [
+	    stylix.homeModules.stylix
             nixvim.homeModules.nixvim
           ];
 	  }
+
         ];
       };
   in

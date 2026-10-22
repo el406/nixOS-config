@@ -8,7 +8,7 @@
         	 position = "top";
 		 modules-left = ["hyprland/workspaces"];
 		 modules-center = ["hyprland/window"];
-		 modules-right = ["pulseaudio" "bluetooth" "network"  "battery" "clock" "tray"];
+		 modules-right = ["pulseaudio" "bluetooth" "battery" "clock" "tray"];
 		 
 		 "clock" = {
           		format = "{:%H:%M}";
@@ -16,7 +16,7 @@
         		};
 
         	"tray" = {
-          		icon-size = 14;
+          		icon-size = 13;
           		spacing = 1;
         		};
 		"battery" = {
